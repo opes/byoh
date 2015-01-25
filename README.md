@@ -173,13 +173,17 @@ Click "Create Droplet".
 
 # Server Setup Part 2: Installing Tools & Adjusting Settings
 ## Connecting via SSH 
+[Connecting to your Droplet via SSH](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh)
+[Setting up Users](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
 ## Installing Dokku-alt
 [dokku-alt](https://github.com/dokku-alt/dokku-alt/)
 ## Setting up Virtual Memory
 ### Bring in the SWAP
 [SWAP](https://www.digitalocean.com/community/tutorials/how-to-configure-virtual-memory-swap-file-on-a-vps)
+[Ubuntu 14.04 SWAP](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 # Deploying Code
 ## Initial git setup & first deploy
+
 ## Making changes and pushing them to the interweb
 
 	
