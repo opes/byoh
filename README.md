@@ -183,8 +183,8 @@ Click "Create Droplet".
 [Ubuntu 14.04 SWAP](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 # Deploying Code
 ## Initial git setup & first deploy
-Add dokku-alt remote
+
 ## Making changes and pushing them to the interweb
-git add/commit/push
+
 	
 	
