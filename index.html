@@ -451,118 +451,139 @@ pre[class*="language-"] {
 
 <h2 id="toc_2"></h2>
 
-<h4 id="toc_3">Table of Contents</h4>
+<h4 id="toc_3"><a name="top"></a>Table of Contents</h4>
 
 <ol>
-<li>What is this about?</li>
-<li>Who is this for?</li>
-<li>Why should I even?</li>
-<li>What&#39;s included?</li>
+<li><a href="#about">What is this about?</a></li>
+<li><a href="#for">Who is this for?</a></li>
+<li><a href="#even">Why should I even?</a></li>
+<li><a href="#involved">What&#39;s involved?</a></li>
 <li>Server Setup Part 1: Creating you server
 
 <ul>
 <li>Prerequisites
 
 <ul>
-<li>Domain Name</li>
-<li>Git
+<li><a href="#domain">Domain Name</a></li>
+<li><a href="#git">Git</a>
 
 <ul>
-<li>What is Git?</li>
-<li>Why should I use it?</li>
+<li><a href="#what-is-git">What is Git?</a></li>
+<li><a href="#why-git">Why should I use it?</a></li>
+<li><a href="#install-git">How do I install Git?</a></li>
 </ul></li>
-<li>SSH
+<li><a href="#ssh">SSH</a>
 
 <ul>
-<li>What is SSH?</li>
-<li>Generating SSH Keys</li>
+<li><a href="#what-is-ssh">What is SSH?</a></li>
+<li><a href="#generate-ssh">Generating SSH Keys</a></li>
 </ul></li>
 </ul></li>
-<li>Setting up a DigitalOcean Droplet
+<li><a href="#digitalocean">Setting up a DigitalOcean Droplet</a>
 
 <ul>
-<li>Sign Up</li>
-<li>Set Up Droplet
+<li><a href="#digitalocean-sign-up">Sign Up</a></li>
+<li><a href="#digitalocean-add-ssh">Adding Your SSH Key</a></li>
+<li><a href="#digitalocean-set-up-droplet">Set Up Droplet</a>
 
 <ul>
 <li>Droplet options
 
 <ul>
-<li>Private Networking</li>
-<li>User Data</li>
-<li>IPv6</li>
-<li>Backups &amp; Snapshots</li>
+<li><a href="#digitalocean-private-networking">Private Networking</a></li>
+<li><a href="#digitalocean-user-data">User Data</a></li>
+<li><a href="#digitalocean-ipv6">IPv6</a></li>
+<li><a href="#digitalocean-backups-snapshots">Backups &amp; Snapshots</a></li>
 </ul></li>
-<li>Adding SSH</li>
-<li>Launching the Server</li>
+<li><a href="#digitalocean-image">Choosing an Image</a></li>
+<li><a href="#digitalocean-select-ssh-key">Select SSH Key</a></li>
+<li><a href="#digitalocean-launch">Launching the Server</a></li>
 </ul></li>
 <li>Set DNS
 
 <ul>
-<li>Add your domain</li>
+<li><a href="#dns-add-your-domain">Add your domain</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
 <li>Server Setup Part 2: Installing Tools &amp; Adjusting Settings
 
 <ul>
-<li>Connecting via SSH </li>
-<li>Installing Dokku-alt</li>
-<li>Setting up Virtual Memory
+<li><a href="#connect-via-ssh">Connecting via SSH</a></li>
+<li><a href="#installing-dokku-alt">Installing Dokku-alt</a></li>
+<li><a href="#setting-up-virtual-memory">Setting up Virtual Memory</a>
 
 <ul>
-<li>Bring in the SWAP</li>
+<li><a href="#bring-in-the-swap">Bring in the SWAP</a></li>
 </ul></li>
+<li><a href="#using-dam">Using dokku-alt-manager (dam) to create your apps and databases</a></li>
 </ul></li>
-<li>Deploying Code
+<li><a href="#deploying-code">Deploying Code</a>
 
 <ul>
-<li>Initial git setup &amp; first deploy</li>
-<li>Making changes and pushing them to the interweb</li>
+<li><a href="#initial-git-setup">Initial git setup &amp; first deploy</a></li>
+<li><a href="#ch-ch-ch-ch-changes">Making changes and pushing them to the interweb</a></li>
 </ul></li>
+<li><a href="#the-end">Conclusion</a></li>
 </ol>
 
 <h2 id="toc_4"></h2>
 
-<h1 id="toc_5">What is this about?</h1>
+<h1 id="toc_5"><a name="about"></a>What is this about?</h1>
 
-<p>Everything is online, from retail stores and shops to streaming video and social networks. This guide is intended to help readers understand how a website or web app can be put online and made available for others to access.  </p>
+<p>Everything is online, from retail stores and shops to streaming video and social networks. This guide is intended to help readers understand how a website or web app can be put online and made available for others to access.</p>
 
-<h1 id="toc_6">Who is this for?</h1>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h1 id="toc_6"><a name="for"></a>Who is this for?</h1>
 
 <p>The target audience for this guide is intentially broad.  It gives you enough overview for those that are just curious about the process, as well as granular details into how to do it yourself.</p>
 
-<h1 id="toc_7">Why should I even?</h1>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<p>Sure, there are many different ways of getting your website put onto the internets - some even easier than this.  But traditional web hosts can be problematic and a standard web hosting solution isn&#39;t usually a valid representation of how companies are getting their sites &amp; apps online.  </p>
+<h1 id="toc_7"><a name="even"></a>Why should I even?</h1>
+
+<p>Sure, there are many different ways of getting your website put onto the internets - some even easier than this.  But traditional web hosts can be problematic and a standard web hosting solution isn&#39;t usually a valid representation of how companies are getting their sites &amp; apps online.</p>
 
 <p>Many web hosts still require you to manually upload all your code &amp; changes to their servers, but what happens if you accidentally upload the wrong file or delete something you didn&#39;t mean to?  With BYOH, readers are shown ways to prevent that from happening or even undoing something that was done accidentally.</p>
 
-<h1 id="toc_8">What&#39;s involved?</h1>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h1 id="toc_8"><a name="involved"></a>What&#39;s involved?</h1>
 
 <p>This guide will show you how to set up a server in the cloud (via DigitalOcean) to host your website or app so that others can access it on the internet.</p>
 
-<h1 id="toc_9">Server Setup Part 1: Creating you server</h1>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<h2 id="toc_10">Prerequisites</h2>
+<h2 id="toc_9"></h2>
 
-<h3 id="toc_11">Domain Name</h3>
+<h1 id="toc_10">Server Setup Part 1: Creating you server</h1>
+
+<h2 id="toc_11">Prerequisites</h2>
+
+<h3 id="toc_12"><a name="domain"></a>Domain Name</h3>
 
 <p>A <a href="http://netforbeginners.about.com/od/d/f/domain_name.htm">domain name</a> is what you type into your <a href="http://www.gcflearnfree.org/internet101/4">browser</a>&#39;s address bar to go to a website, such as <em><a href="http://www.google.com">www.google.com</a></em>, <em><a href="http://whitehouse.gov">whitehouse.gov</a></em>, or <em><a href="theroadhome.org">theroadhome.org</a></em>.  Behind the scenes, the domain actually takes you to an <a href="http://computer.howstuffworks.com/internet/basics/question549.htm">IP Address</a> where your server is located.  It makes it easier for others to access your website.  Can you imagine if we had to know every IP address for all of the websites we&#39;ve visited?  Yikes.</p>
 
 <p>Getting your very own domain name is easy and fairly inexpensive.  All that&#39;s required is <a href="https://www.namecheap.com/">buying your domain name</a>, then pointing it to your server (which will be covered below).</p>
 
-<h3 id="toc_12">Git</h3>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_13"><a name="git"></a>Git</h3>
 
 <p><em>Or &quot;how to undo that terrible change you just made that broke everything&quot;</em></p>
 
-<h4 id="toc_13">What is Git?</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<p><a href="http://www.makeuseof.com/tag/git-version-control-youre-developer/">Git</a> is a way to keep a history of changes that have been made to your code.  It allows for multiple developers to work on the same code simultaneously without one person overwriting work that another had already done.  It makes it easier to resolve any conflicts in the code before uploading it to the server to be put online.  </p>
+<h4 id="toc_14"><a name="what-is-git"></a>What is Git?</h4>
+
+<p><a href="http://www.makeuseof.com/tag/git-version-control-youre-developer/">Git</a> is a way to keep a history of changes that have been made to your code.  It allows for multiple developers to work on the same code simultaneously without one person overwriting work that another had already done.  It makes it easier to resolve any conflicts in the code before uploading it to the server to be put online.</p>
 
 <p>Git (or some other version control software) is critical when working on code with more than just one person.  However, even if you are the only one writing code, it is still important to use in case you need to undo a change you made or figure out at what point in history that a piece of code was written.</p>
 
-<h4 id="toc_14">Why should I use it?</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_15"><a name="why-git"></a>Why should I use it?</h4>
 
 <p>Imagine you are working on changing the homepage to your website.  You create a new <a href="http://webdesign.about.com/od/beginningtutorials/f/index_html.htm">index.html</a> file, fill it with some junk content, and maybe even throw in a couple irrelevant pictures as placeholders.  Then you decide to scrap it, but you don&#39;t have the previous version of the file.  So you <a href="https://help.yahoo.com/kb/yahoo-web-hosting/ftp-sln20433.html">connect to your server</a> to download the current version and overwrite your &quot;work in progress&quot;.  You click the download button, click &quot;overwrite&quot;, and get the file.  Or so you thought...  When you open up the &quot;downloaded&quot; file, you realize it&#39;s the same file you were working on before!  You suddenly realize that you accidentally clicked the <em>Upload</em> button instead of <em>Download</em>.  Now, the whole world can see your junky work in progress!  And you don&#39;t have the original file anywhere to go back!  Time to call tech support...  Hope you have a couple hours to spare!</p>
 
@@ -570,31 +591,53 @@ pre[class*="language-"] {
 
 <p>Or what if you had multiple people working on the same file at the same time?  One person is making numerous, in-depth changes, where the other just had to fix a typo.  The bigger change goes out first, but then the other typo fix overwrites it (using the old version).  The developer making the big changes sees that a new version was uploaded, so they download it and replace their current version... Hopefully they had a backup!</p>
 
-<h3 id="toc_15">SSH</h3>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_16"><a name="install-git"></a>How do I install Git?</h4>
+
+<p>Each platform makes it fairly easy to install Git.  If you haven&#39;t installed it already, read more <a href="http://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a>.</p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_17"><a name="ssh"></a>SSH</h3>
 
 <p><em>Or &quot;hold onto your butts&quot;</em></p>
 
-<h4 id="toc_16">What is SSH?</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_18"><a name="what-is-ssh"></a>What is SSH?</h4>
 
 <p><a href="http://searchsecurity.techtarget.com/definition/Secure-Shell">SSH</a> is a way to securely connect to your web server and make changes.  But be careful!  Don&#39;t run any command if you aren&#39;t 100% sure what it does.  You could delete something you don&#39;t mean to or install something that could break or be unsafe for your server.</p>
 
 <p>You use SSH through your computer&#39;s <a href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">terminal/command line application</a>.  However, to connect to your server via SSH, you must set up <a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets">SSH Keys</a> if you haven&#39;t already (see below).</p>
 
-<h4 id="toc_17">Generating SSH Keys</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_19"><a name="generate-ssh"></a>Generating SSH Keys</h4>
 
 <p>If you already have SSH keys created and want to use them, you can skip this step.  However, if you don&#39;t have any or are unsure, continue on.</p>
 
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets">How to Set Up SSH Keys on DigitalOcean</a></p>
 
-<h2 id="toc_18">Setting up a DigitalOcean Droplet</h2>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<h3 id="toc_19">Sign Up</h3>
+<h2 id="toc_20"><a name="digitalocean"></a>Setting up a DigitalOcean Droplet</h2>
+
+<p>A Droplet is what DigitalOcean calls their virtual servers where your code will be hosted.  It&#39;s the &quot;cloud&quot; where people will visit your website.</p>
+
+<p>Read More: <a href="https://www.digitalocean.com/help/technical/general/">Technical FAQ</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_21"><a name="digitalocean-sign-up"></a>Sign Up</h3>
 
 <p>First, <a href="http://digitalocean.com">create an account on DigitalOcean</a>, add your billing information, then sign in.</p>
 
 <p><img src="https://www.dropbox.com/s/wsbuv3t2ho83jmu/Screenshot%202015-01-25%2012.55.03.png?dl=1" alt="DigitalOcean home page"></p>
 
-<h3 id="toc_20">Adding Your SSH Key</h3>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_22"><a name="digitalocean-add-ssh"></a>Adding Your SSH Key</h3>
 
 <ol>
 <li>Open your terminal and type <code>pbcopy &lt; ~/.ssh/id_rsa.pub</code>.  This will copy your public SSH key to your clipboard.</li>
@@ -606,76 +649,236 @@ pre[class*="language-"] {
 <li>Celebrate.</li>
 </ol>
 
-<h3 id="toc_21">Set Up Droplet</h3>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_23"><a name="digitalocean-set-up-droplet"></a>Set Up Droplet</h3>
 
 <p>On the <a href="https://cloud.digitalocean.com/droplets">Droplets</a> page, click <a href="https://cloud.digitalocean.com/droplets/new">Create Droplet</a>
 <img src="https://www.dropbox.com/s/7rg7p3khy5mqr4g/Screenshot%202015-01-25%2013.11.02.png?dl=1" alt="Create the Droplet"></p>
 
-<h4 id="toc_22">Droplet options</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<h5 id="toc_23">Pricing &amp; Regions</h5>
+<h4 id="toc_24">Droplet options</h4>
+
+<h5 id="toc_25"><a name="digitalocean-pricing-regions"></a>Pricing &amp; Regions</h5>
 
 <p>How much you pay a month determines the hardware specifications of your server.  The more you pay, the more resources your server will have to deliver your website to more users.  You can start small, then add additional resources in the future if the need arises.</p>
 
 <p>Each server is located in a specific region on the globe.  Selecting the region that is closest to your customers can help improve their load time.  If you require other options (see below) though, your options might be slightly limited as not all regions have the same features.</p>
 
-<h5 id="toc_24">Private Networking</h5>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-digitalocean-private-networking">Private Networking</a></p>
+<h5 id="toc_26"><a name="digitalocean-private-networking"></a>Private Networking</h5>
 
-<h5 id="toc_25">User Data</h5>
+<p>Private Networking allows to have a Droplet only accessable via the private network in the data center (region) where your server is located.  This can be useful for things such as database replications.</p>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata">What is User Data?</a></p>
+<p>We will not be using Private Networking in the scope of this guide (yet), but to learn more, read here: <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-digitalocean-private-networking">Private Networking</a></p>
 
-<h5 id="toc_26">IPv6</h5>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-your-droplet-to-only-use-ipv6-networking">Setting up IPv6</a></p>
+<h5 id="toc_27"><a name="digitalocean-user-data"></a>User Data</h5>
 
-<h5 id="toc_27">Backups &amp; Snapshots</h5>
+<p>The User Data setting allows for the Droplet to use ambiguous user data upon its creation.  This is usually used for <a href="https://help.ubuntu.com/community/CloudInit">CloudInit</a>, in which special scripts can be run upon the initial creation of the server - such as configuration settings.</p>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/digitalocean-backups-and-snapshots-explained">What are Backups?  What are Snapshots?</a></p>
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata">What is User Data?</a></p>
 
-<h4 id="toc_28">Choosing an Image</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h5 id="toc_28"><a name="digitalocean-ipv6"></a>IPv6</h5>
+
+<p>What is IPv6?</p>
+
+<blockquote>
+<p>IPv6 is the most recent version of the IP protocol that the entire internet relies on to connect to other locations (IP protocol is a bit redundant because IP stands for internet protocol, but we will use it because it is easy). While IPv4 is still in use in many areas of the world, the IPv4 address space is being consumed at a rapid rate and it is not large enough to sustain the rapid deployment of internet-ready devices.</p>
+
+<p>IPv6 looks to solve these problems. As well as making general improvements on the protocol, the most obvious benefit of utilizing IPv6 addresses is that it has a much larger address space. While IPv4 allowed for 2^32 addresses (with some of those reserved for special purposes), the IPv6 address space allows for 2^128 addresses, which is an incredible increase</p>
+</blockquote>
+
+<p>Whether or not your website supports IPv6 is totally up to you, you framework, or anything else you&#39;re using to run the server.</p>
+
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-your-droplet-to-only-use-ipv6-networking">Setting up IPv6</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h5 id="toc_29"><a name="digitalocean-backups-snapshots"></a>Backups &amp; Snapshots</h5>
+
+<blockquote>
+<p>DigitalOcean users have the option of backup and snapshot features. The main difference between the two is that snapshots can be generated manually and can be enabled at any time, while backups are run automatically every few days, depending on the droplet’s disk size, and must be enabled during the droplet&#39;s creation.</p>
+</blockquote>
+
+<p>If you want to keep your server and data backed up, you can choose to enable backups.  NOTE: This costs!  20% of your monthly charge to be exact.  Backups happen automatically without shutting down your server.  <strong>Backups must be enabled when your Droplet is first created</strong>.  Snapshots, on the other hand, can be generated <em>after</em> your server has been created.  However, snapshots are manual.  The current pricing for snapshots is $0.02/GB used for snapshot.</p>
+
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/digitalocean-backups-and-snapshots-explained">What are Backups?  What are Snapshots?</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_30"><a name="digitalocean-image"></a>Choosing an Image</h4>
 
 <p>For this guide, we will be using the <strong>Ubuntu 14.04 x64</strong> Distribution for the image.  However, DigitalOcean has many different options for server distributions, one-click application installs, and more.</p>
 
-<h4 id="toc_29">Add SSH Key</h4>
+<p>Read More: <a href="https://www.digitalocean.com/features/one-click-apps/">One-click App Installs, Distributions, and More</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_31"><a name="digitalocean-select-ssh-key"></a>Select SSH Key</h4>
 
 <p>Click the SSH key that we added earlier, that&#39;s it!</p>
 
 <p>For reference: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets">Adding the Key to Your DigitalOcean Droplet</a></p>
 
-<h4 id="toc_30">Launching the Server</h4>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h4 id="toc_32"><a name="digitalocean-launch"></a>Launching the Server</h4>
 
 <p><em>This is where the magic happens.</em></p>
 
 <p>Click &quot;Create Droplet&quot;.</p>
 
-<h3 id="toc_31">Set DNS</h3>
+<h3 id="toc_33">Set DNS</h3>
 
-<h4 id="toc_32">Add your domain</h4>
+<h4 id="toc_34"><a name="dns-add-your-domain"></a>Add your domain</h4>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">How to point your domain to DigitalOcean</a></p>
+<p>Now that your Droplet has been created, we need to point your domain to it so the world can access your creation!</p>
 
-<h1 id="toc_33">Server Setup Part 2: Installing Tools &amp; Adjusting Settings</h1>
+<p>Pointing your domain to your Droplet varies depending on whom you purchased your domain through.  All that it requires is setting the domain&#39;s <a href="http://www.networksolutions.com/support/what-is-a-domain-name-server-dns-and-how-does-it-work/">Name Servers</a> to the ones provided through DigitalOcean.</p>
 
-<h2 id="toc_34">Connecting via SSH</h2>
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">How to point your domain to DigitalOcean</a></p>
 
-<h2 id="toc_35">Installing Dokku-alt</h2>
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
-<p><a href="https://github.com/dokku-alt/dokku-alt/">dokku-alt</a></p>
+<h2 id="toc_35"></h2>
 
-<h2 id="toc_36">Setting up Virtual Memory</h2>
+<h1 id="toc_36">Server Setup Part 2: Installing Tools &amp; Adjusting Settings</h1>
 
-<h3 id="toc_37">Bring in the SWAP</h3>
+<h2 id="toc_37"><a name="connect-via-ssh"></a>Connecting via SSH</h2>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-virtual-memory-swap-file-on-a-vps">SWAP</a></p>
+<p>In order to access our server, we need to connect via SSH.  This is done through the terminal or command line and allows us to run commands on our server from our computer.  Once connected, we can run some commands that allow us to manage our server, install software, reboot, and more.</p>
 
-<h1 id="toc_38">Deploying Code</h1>
+<p>Some common examples include:</p>
 
-<h2 id="toc_39">Initial git setup &amp; first deploy</h2>
+<ul>
+<li>Listing files and directories: <code>ls</code></li>
+<li>Changing your current directory: <code>cd /some_directory</code></li>
+<li>Copying files: <code>cp file_you_want_to_copy.txt /destination/directory</code></li>
+<li>Moving files: <code>mv file_you_want_to_move.txt /destination/and_new_file_name_if_wanted.txt</code></li>
+<li>Rebooting your server: <code>sudo reboot</code></li>
+</ul>
 
-<h2 id="toc_40">Making changes and pushing them to the interweb</h2>
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh">Connecting to your Droplet via SSH</a>
+<a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04">Setting up Users</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h2 id="toc_38"><a name="installing-dokku-alt"></a>Installing dokku-alt</h2>
+
+<p>dokku-alt is a software package that allows for the ability to push your code to your server with Git and has many other features.  It&#39;s where the &quot;Build Your Own Heroku&quot; name comes from, as Dokku recreates some of the most popular features from Heroku, such as git deploys and buildpacks.</p>
+
+<p>dokku-alt adds additional features to dokku, such as the dokku-alt-manager, which we&#39;ll be using.</p>
+
+<p>Installing dokku-alt is easy and fully automated.  It can be done as follows:</p>
+
+<ol>
+<li>SSH into your server from your terminal: <code>ssh root@yourdomain</code></li>
+<li>Run the following command: <code>sudo bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/dokku-alt/dokku-alt/master/bootstrap.sh)&quot;</code></li>
+<li>After the installation has completed, visit <code>yourdomain:2000</code> to finish set up.
+
+<ul>
+<li>Set the domain name where you website will be accessed</li>
+<li>Choose how you want users to access your apps on that domain (myapp.yourdomain.com or yourdomain.com/myapp)</li>
+</ul></li>
+<li>Save, then close out of your SSH session.</li>
+</ol>
+
+<p>Read More: <a href="https://github.com/dokku-alt/dokku-alt/">dokku-alt</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h2 id="toc_39"><a name="setting-up-virtual-memory"></a>Setting up Virtual Memory</h2>
+
+<p>You may come to find that you run out of memory quickly, depending on how many visitors visit your website or what services your server will be running.  In fact, DigitalOcean&#39;s smallest memory tier (512MB at the time of this writing) can quickly fill up just running the server, let alone deploying code via git and more.</p>
+
+<p>To fix the &quot;Out of Memory&quot; errors, we can create virtual memory on your server&#39;s SSD.  This allocates a certain amount of space of your server&#39;s SSD to be used as a virtual &quot;RAM&quot;.  However, writing data to the SSD this way can be &quot;costly&quot; in terms of how long it takes to do.</p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h3 id="toc_40"><a name="bring-in-the-swap"></a>Bring in the SWAP</h3>
+
+<p>We&#39;ll be looking at the following guide for setting up a SWAP - virtual memory to be used in case your actual memory runs out when performing a task.</p>
+
+<p>Read More: <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-virtual-memory-swap-file-on-a-vps">SWAP</a>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">Ubuntu 14.04 SWAP</a></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h2 id="toc_41"><a name="using-dam"></a>Using dokku-alt-manager (dam) to create your apps and databases</h2>
+
+<p>In order to deploy apps and databases, we can either create them via command line or use the dokku-alt-manager interface that handles it for us.</p>
+
+<p>To install dokku-alt-manager:</p>
+
+<ol>
+<li>SSH into your server: <code>ssh root@yourdomain</code></li>
+<li>Run the install command: <code>dokku manager:install</code></li>
+<li>Visit <code>http://dam.yourdomain.com</code> or <code>http://yourdomain.com/dam</code> (depending on how you chose to do the routing when installing dokku-alt)</li>
+<li>Your host (Droplet) should be listed, which you can select and deploy an app to or add a database.</li>
+</ol>
+
+<h2 id="toc_42"></h2>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h1 id="toc_43"><a name="deploying-code"></a>Deploying Code</h1>
+
+<p><strong>NOTE: In order to deploy code, you must have set up an app in the previous step.</strong></p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h2 id="toc_44"><a name="initial-git-setup"></a>Initial git setup &amp; first deploy</h2>
+
+<p>Now that your app has been set up and everything you need has been installed, we can deploy our app to the server!  Remember, this is a Heroku clone, so Heroku requirements and necessary here, such as a valid <a href="https://devcenter.heroku.com/articles/procfile">Procfile</a> and <a href="https://devcenter.heroku.com/articles/buildpacks">Buildpack</a>.</p>
+
+<p>For this example, we&#39;ll use the Node.js Heroku sample app.</p>
+
+<pre><code>$ git clone https://github.com/heroku/node-js-sample
+$ cd node-js-sample
+$ git remote add dokku dokku@yourdomain.com:your-app-name
+$ git push dokku master</code></pre>
+
+<p>Your app should now be online! (yourapp.yourdomain.com)</p>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h2 id="toc_45"><a name="ch-ch-ch-ch-changes"></a>Making changes and pushing them to the interweb</h2>
+
+<p>Now that your app is online, you will most likely need to make changes.  To do that, you will make your changes, add the changes to Git (i.e. stage them), commit your changes when you&#39;ve reached a point where the work is completed, then push those changes to your Droplet.  This is all done through the command line:</p>
+
+<pre><code># in your working directory
+$ git add .
+$ git commit
+$ git push dokku master</code></pre>
+
+<p>Sometimes you may need to add a file that doesn&#39;t already exist in the git repository (repo).  Or maybe you only want to add one or two files and not all the changes you&#39;ve made.  These can both be accomplished by either of these options:</p>
+
+<ul>
+<li><code>git add -A</code> adds all modified files as well as untracked, unadded files.</li>
+<li><code>git add app/controllers/yourfile.rb</code> adds a specific file or files (separated by a space).</li>
+</ul>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
+
+<h1 id="toc_46"><a name="the-end"></a>Conclusion</h1>
+
+<p>Now you should have all you need to get your app online.  What&#39;s next?</p>
+
+<ul>
+<li>Get comfortable with Git and how to revert changes in the event a commit breaks something</li>
+<li>Explore the one-click app install options</li>
+<li>Try setting up a Droplet from a snapshot or backup that you&#39;ve previously created</li>
+<li>Try creating a database replication Droplet and connect to it via the private network</li>
+<li>Create an install script to be used with CloudInit and user data to automate the server initialization configuration</li>
+</ul>
+
+<p><small><a href="#top">&#65514; Back to Top</a></small></p>
 
 <script type="text/javascript">
 self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{};var Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var i=r[e];if(2==arguments.length){a=arguments[1];for(var l in a)a.hasOwnProperty(l)&&(i[l]=a[l]);return i}var o={};for(var s in i)if(i.hasOwnProperty(s)){if(s==n)for(var l in a)a.hasOwnProperty(l)&&(o[l]=a[l]);o[s]=i[s]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,n,a){for(var r in e)e.hasOwnProperty(r)&&(n.call(e,r,e[r],a||r),"Object"===t.util.type(e[r])?t.languages.DFS(e[r],n):"Array"===t.util.type(e[r])&&t.languages.DFS(e[r],n,r))}},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),i=0;a=r[i++];)t.highlightElement(a,e===!0,n)},highlightElement:function(a,r,i){for(var l,o,s=a;s&&!e.test(s.className);)s=s.parentNode;if(s&&(l=(s.className.match(e)||[,""])[1],o=t.languages[l]),o){a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,s=a.parentNode,/pre/i.test(s.nodeName)&&(s.className=s.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var g=a.textContent;if(g){g=g.replace(/^(?:\r?\n|\r)/,"");var u={element:a,language:l,grammar:o,code:g};if(t.hooks.run("before-highlight",u),r&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){u.highlightedCode=n.stringify(JSON.parse(e.data),l),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,i&&i.call(u.element),t.hooks.run("after-highlight",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code}))}else u.highlightedCode=t.highlight(u.code,u.grammar,u.language),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,i&&i.call(a),t.hooks.run("after-highlight",u)}}},highlight:function(e,a,r){var i=t.tokenize(e,a);return n.stringify(t.util.encode(i),r)},tokenize:function(e,n){var a=t.Token,r=[e],i=n.rest;if(i){for(var l in i)n[l]=i[l];delete n.rest}e:for(var l in n)if(n.hasOwnProperty(l)&&n[l]){var o=n[l];o="Array"===t.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var g=o[s],u=g.inside,c=!!g.lookbehind,f=0,h=g.alias;g=g.pattern||g;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){g.lastIndex=0;var m=g.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),O=[p,1];b&&O.push(b);var N=new a(l,u?t.tokenize(m,u):m,h);O.push(N),w&&O.push(w),Array.prototype.splice.apply(r,O)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,i=0;r=a[i++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("[object Array]"==Object.prototype.toString.call(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var i={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==i.type&&(i.attributes.spellcheck="true"),e.alias){var l="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(i.classes,l)}t.hooks.run("wrap",i);var o="";for(var s in i.attributes)o+=s+'="'+(i.attributes[s]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+o+">"+i.content+"</"+i.tag+">"},!self.document)return self.addEventListener?(self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code;self.postMessage(JSON.stringify(t.util.encode(t.tokenize(r,t.languages[a])))),self.close()},!1),self.Prism):self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism);
