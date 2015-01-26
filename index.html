@@ -449,6 +449,9 @@ pre[class*="language-"] {
 
 <p><em>A Getting Started Guide for Complete Noobs... like me</em></p>
 
+<p>This guide is <a href="https://github.com/opes/byoh">open source</a>!
+Feedback and contributions are welcome (and highly encouraged)!</p>
+
 <h2 id="toc_2"></h2>
 
 <h4 id="toc_3"><a name="top"></a>Table of Contents</h4>
@@ -458,7 +461,7 @@ pre[class*="language-"] {
 <li><a href="#for">Who is this for?</a></li>
 <li><a href="#even">Why should I even?</a></li>
 <li><a href="#involved">What&#39;s involved?</a></li>
-<li>Server Setup Part 1: Creating you server
+<li>Server Setup Part 1: Creating your server
 
 <ul>
 <li>Prerequisites
@@ -557,7 +560,7 @@ pre[class*="language-"] {
 
 <h2 id="toc_9"></h2>
 
-<h1 id="toc_10">Server Setup Part 1: Creating you server</h1>
+<h1 id="toc_10">Server Setup Part 1: Creating your server</h1>
 
 <h2 id="toc_11">Prerequisites</h2>
 
@@ -585,7 +588,7 @@ pre[class*="language-"] {
 
 <h4 id="toc_15"><a name="why-git"></a>Why should I use it?</h4>
 
-<p>Imagine you are working on changing the homepage to your website.  You create a new <a href="http://webdesign.about.com/od/beginningtutorials/f/index_html.htm">index.html</a> file, fill it with some junk content, and maybe even throw in a couple irrelevant pictures as placeholders.  Then you decide to scrap it, but you don&#39;t have the previous version of the file.  So you <a href="https://help.yahoo.com/kb/yahoo-web-hosting/ftp-sln20433.html">connect to your server</a> to download the current version and overwrite your &quot;work in progress&quot;.  You click the download button, click &quot;overwrite&quot;, and get the file.  Or so you thought...  When you open up the &quot;downloaded&quot; file, you realize it&#39;s the same file you were working on before!  You suddenly realize that you accidentally clicked the <em>Upload</em> button instead of <em>Download</em>.  Now, the whole world can see your junky work in progress!  And you don&#39;t have the original file anywhere to go back!  Time to call tech support...  Hope you have a couple hours to spare!</p>
+<p>Imagine you a re working on changing the homepage to your website.  You create a new <a href="http://webdesign.about.com/od/beginningtutorials/f/index_html.htm">index.html</a> file, fill it with some junk content, and maybe even throw in a couple irrelevant pictures as placeholders.  Then you decide to scrap it, but you don&#39;t have the previous version of the file.  So you <a href="https://help.yahoo.com/kb/yahoo-web-hosting/ftp-sln20433.html">connect to your server</a> to download the current version and overwrite your &quot;work in progress&quot;.  You click the download button, click &quot;overwrite&quot;, and get the file.  Or so you thought...  When you open up the &quot;downloaded&quot; file, you realize it&#39;s the same file you were working on before!  You suddenly realize that you accidentally clicked the <em>Upload</em> button instead of <em>Download</em>.  Now, the whole world can see your junky work in progress!  And you don&#39;t have the original file anywhere to go back!  Time to call tech support...  Hope you have a couple hours to spare!</p>
 
 <p>Now, what if you had used Git?  If you wanted to make the same mistake, you would have to 1.) add the file, 2.) commit your change, and 3.) push it to the server.  Hopefully you would have caught your mistake before you pushed it out.  But what if you didn&#39;t?  With Git, you have an easy way to undo that change you made, no tech support required!  You can revert your change and push it out and everything will be back to where it was before, when it was working!</p>
 
@@ -694,7 +697,7 @@ pre[class*="language-"] {
 <p>IPv6 looks to solve these problems. As well as making general improvements on the protocol, the most obvious benefit of utilizing IPv6 addresses is that it has a much larger address space. While IPv4 allowed for 2^32 addresses (with some of those reserved for special purposes), the IPv6 address space allows for 2^128 addresses, which is an incredible increase</p>
 </blockquote>
 
-<p>Whether or not your website supports IPv6 is totally up to you, you framework, or anything else you&#39;re using to run the server.</p>
+<p>Whether or not your website supports IPv6 is totally up to you, your framework, or anything else you&#39;re using to run the server.</p>
 
 <p>Read More: <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-your-droplet-to-only-use-ipv6-networking">Setting up IPv6</a></p>
 
@@ -844,7 +847,7 @@ $ cd node-js-sample
 $ git remote add dokku dokku@yourdomain.com:your-app-name
 $ git push dokku master</code></pre>
 
-<p>Your app should now be online! (yourapp.yourdomain.com)</p>
+<p>Your app should now be online! (yourapp.yourdomain.com or yourdomain.com/yourapp)</p>
 
 <p><small><a href="#top">&#65514; Back to Top</a></small></p>
 

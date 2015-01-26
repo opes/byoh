@@ -6,6 +6,9 @@ BYOH
 ### BYOH: Build Your Own Heroku
 _A Getting Started Guide for Complete Noobs... like me_
 
+This guide is [open source](https://github.com/opes/byoh)!
+Feedback and contributions are welcome (and highly encouraged)!
+
 --
 
 
@@ -14,7 +17,7 @@ _A Getting Started Guide for Complete Noobs... like me_
 - [Who is this for?](#for)
 - [Why should I even?](#even)
 - [What's involved?](#involved)
-- Server Setup Part 1: Creating you server
+- Server Setup Part 1: Creating your server
 	- Prerequisites
 		- [Domain Name](#domain)
 		- [Git](#git)
@@ -79,7 +82,7 @@ This guide will show you how to set up a server in the cloud (via DigitalOcean) 
 
 --
 
-# Server Setup Part 1: Creating you server
+# Server Setup Part 1: Creating your server
 ## Prerequisites
 ### <a name="domain"></a>Domain Name
 
@@ -105,7 +108,7 @@ Git (or some other version control software) is critical when working on code wi
 
 #### <a name="why-git"></a>Why should I use it?
 
-Imagine you are working on changing the homepage to your website.  You create a new [index.html](http://webdesign.about.com/od/beginningtutorials/f/index_html.htm) file, fill it with some junk content, and maybe even throw in a couple irrelevant pictures as placeholders.  Then you decide to scrap it, but you don't have the previous version of the file.  So you [connect to your server](https://help.yahoo.com/kb/yahoo-web-hosting/ftp-sln20433.html) to download the current version and overwrite your "work in progress".  You click the download button, click "overwrite", and get the file.  Or so you thought...  When you open up the "downloaded" file, you realize it's the same file you were working on before!  You suddenly realize that you accidentally clicked the _Upload_ button instead of _Download_.  Now, the whole world can see your junky work in progress!  And you don't have the original file anywhere to go back!  Time to call tech support...  Hope you have a couple hours to spare!
+Imagine you a re working on changing the homepage to your website.  You create a new [index.html](http://webdesign.about.com/od/beginningtutorials/f/index_html.htm) file, fill it with some junk content, and maybe even throw in a couple irrelevant pictures as placeholders.  Then you decide to scrap it, but you don't have the previous version of the file.  So you [connect to your server](https://help.yahoo.com/kb/yahoo-web-hosting/ftp-sln20433.html) to download the current version and overwrite your "work in progress".  You click the download button, click "overwrite", and get the file.  Or so you thought...  When you open up the "downloaded" file, you realize it's the same file you were working on before!  You suddenly realize that you accidentally clicked the _Upload_ button instead of _Download_.  Now, the whole world can see your junky work in progress!  And you don't have the original file anywhere to go back!  Time to call tech support...  Hope you have a couple hours to spare!
 
 Now, what if you had used Git?  If you wanted to make the same mistake, you would have to 1.) add the file, 2.) commit your change, and 3.) push it to the server.  Hopefully you would have caught your mistake before you pushed it out.  But what if you didn't?  With Git, you have an easy way to undo that change you made, no tech support required!  You can revert your change and push it out and everything will be back to where it was before, when it was working!
 
@@ -208,7 +211,7 @@ What is IPv6?
 >
 > IPv6 looks to solve these problems. As well as making general improvements on the protocol, the most obvious benefit of utilizing IPv6 addresses is that it has a much larger address space. While IPv4 allowed for 2^32 addresses (with some of those reserved for special purposes), the IPv6 address space allows for 2^128 addresses, which is an incredible increase
 
-Whether or not your website supports IPv6 is totally up to you, you framework, or anything else you're using to run the server.
+Whether or not your website supports IPv6 is totally up to you, your framework, or anything else you're using to run the server.
 
 Read More: [Setting up IPv6](https://www.digitalocean.com/community/tutorials/how-to-configure-your-droplet-to-only-use-ipv6-networking)
 
@@ -347,7 +350,7 @@ $ git remote add dokku dokku@yourdomain.com:your-app-name
 $ git push dokku master
 ```
 
-Your app should now be online! (yourapp.yourdomain.com)
+Your app should now be online! (yourapp.yourdomain.com or yourdomain.com/yourapp)
 
 <small>[&#65514; Back to Top](#top)</small>
 
