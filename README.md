@@ -9,11 +9,11 @@ _A Getting Started Guide for Complete Noobs... like me_
 --
 
 
-#### Table of Contents
+#### <a name="top"></a>Table of Contents
 1. [What is this about?](#about)
 - [Who is this for?](#for)
 - [Why should I even?](#even)
-- [What's included?](#included)
+- [What's involved?](#involved)
 - Server Setup Part 1: Creating you server
 	- Prerequisites
 		- [Domain Name](#domain)
@@ -27,12 +27,13 @@ _A Getting Started Guide for Complete Noobs... like me_
 	- [Setting up a DigitalOcean Droplet](#digitalocean)
 		- [Sign Up](#digitalocean-sign-up)
 		- [Adding Your SSH Key](#digitalocean-add-ssh)
-		- [Set Up Droplet](#digitalocean-droplet)
+		- [Set Up Droplet](#digitalocean-set-up-droplet)
 			- Droplet options
 				- [Private Networking](#digitalocean-private-networking)
 				- [User Data](#digitalocean-user-data)
 				- [IPv6](#digitalocean-ipv6)
 				- [Backups & Snapshots](#digitalocean-backups-snapshots)
+			- [Choosing an Image](#digitalocean-image)
 			- [Select SSH Key](#digitalocean-select-ssh-key)
 			- [Launching the Server](#digitalocean-launch)
 		- Set DNS
@@ -54,9 +55,13 @@ _A Getting Started Guide for Complete Noobs... like me_
 
 Everything is online, from retail stores and shops to streaming video and social networks. This guide is intended to help readers understand how a website or web app can be put online and made available for others to access.
 
+<small>[&#65514; Back to Top](#top)</small>
+
 # <a name="for"></a>Who is this for?
 
 The target audience for this guide is intentially broad.  It gives you enough overview for those that are just curious about the process, as well as granular details into how to do it yourself.
+
+<small>[&#65514; Back to Top](#top)</small>
 
 # <a name="even"></a>Why should I even?
 
@@ -64,9 +69,13 @@ Sure, there are many different ways of getting your website put onto the interne
 
 Many web hosts still require you to manually upload all your code & changes to their servers, but what happens if you accidentally upload the wrong file or delete something you didn't mean to?  With BYOH, readers are shown ways to prevent that from happening or even undoing something that was done accidentally.
 
+<small>[&#65514; Back to Top](#top)</small>
+
 # <a name="involved"></a>What's involved?
 
 This guide will show you how to set up a server in the cloud (via DigitalOcean) to host your website or app so that others can access it on the internet.
+
+<small>[&#65514; Back to Top](#top)</small>
 
 --
 
@@ -78,15 +87,21 @@ A [domain name](http://netforbeginners.about.com/od/d/f/domain_name.htm) is what
 
 Getting your very own domain name is easy and fairly inexpensive.  All that's required is [buying your domain name](https://www.namecheap.com/), then pointing it to your server (which will be covered below).
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ### <a name="git"></a>Git
 
 _Or "how to undo that terrible change you just made that broke everything"_
+
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="what-is-git"></a>What is Git?
 
 [Git](http://www.makeuseof.com/tag/git-version-control-youre-developer/) is a way to keep a history of changes that have been made to your code.  It allows for multiple developers to work on the same code simultaneously without one person overwriting work that another had already done.  It makes it easier to resolve any conflicts in the code before uploading it to the server to be put online.
 
 Git (or some other version control software) is critical when working on code with more than just one person.  However, even if you are the only one writing code, it is still important to use in case you need to undo a change you made or figure out at what point in history that a piece of code was written.
+
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="why-git"></a>Why should I use it?
 
@@ -96,13 +111,19 @@ Now, what if you had used Git?  If you wanted to make the same mistake, you woul
 
 Or what if you had multiple people working on the same file at the same time?  One person is making numerous, in-depth changes, where the other just had to fix a typo.  The bigger change goes out first, but then the other typo fix overwrites it (using the old version).  The developer making the big changes sees that a new version was uploaded, so they download it and replace their current version... Hopefully they had a backup!
 
+<small>[&#65514; Back to Top](#top)</small>
+
 #### <a name="install-git"></a>How do I install Git?
 
 Each platform makes it fairly easy to install Git.  If you haven't installed it already, read more [here](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ### <a name="ssh"></a>SSH
 
 _Or "hold onto your butts"_
+
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="what-is-ssh"></a>What is SSH?
 
@@ -110,6 +131,7 @@ _Or "hold onto your butts"_
 
 You use SSH through your computer's [terminal/command line application](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line).  However, to connect to your server via SSH, you must set up [SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) if you haven't already (see below).
 
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="generate-ssh"></a>Generating SSH Keys
 
@@ -117,17 +139,23 @@ If you already have SSH keys created and want to use them, you can skip this ste
 
 [How to Set Up SSH Keys on DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ## <a name="digitalocean"></a>Setting up a DigitalOcean Droplet
 
 A Droplet is what DigitalOcean calls their virtual servers where your code will be hosted.  It's the "cloud" where people will visit your website.
 
 Read More: [Technical FAQ](https://www.digitalocean.com/help/technical/general/)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ### <a name="digitalocean-sign-up"></a>Sign Up
 
 First, [create an account on DigitalOcean](http://digitalocean.com), add your billing information, then sign in.
 
 ![DigitalOcean home page](https://www.dropbox.com/s/wsbuv3t2ho83jmu/Screenshot%202015-01-25%2012.55.03.png?dl=1)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ### <a name="digitalocean-add-ssh"></a>Adding Your SSH Key
 
@@ -139,11 +167,14 @@ First, [create an account on DigitalOcean](http://digitalocean.com), add your bi
 6. Click "Create SSH Key"
 7. Celebrate.
 
+<small>[&#65514; Back to Top](#top)</small>
 
 ### <a name="digitalocean-set-up-droplet"></a>Set Up Droplet
 
 On the [Droplets](https://cloud.digitalocean.com/droplets) page, click [Create Droplet](https://cloud.digitalocean.com/droplets/new)
 ![Create the Droplet](https://www.dropbox.com/s/7rg7p3khy5mqr4g/Screenshot%202015-01-25%2013.11.02.png?dl=1)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 #### Droplet options
 ##### <a name="digitalocean-pricing-regions"></a>Pricing & Regions
@@ -152,17 +183,23 @@ How much you pay a month determines the hardware specifications of your server. 
 
 Each server is located in a specific region on the globe.  Selecting the region that is closest to your customers can help improve their load time.  If you require other options (see below) though, your options might be slightly limited as not all regions have the same features.
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ##### <a name="digitalocean-private-networking"></a>Private Networking
 
 Private Networking allows to have a Droplet only accessable via the private network in the data center (region) where your server is located.  This can be useful for things such as database replications.
 
 We will not be using Private Networking in the scope of this guide (yet), but to learn more, read here: [Private Networking](https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-digitalocean-private-networking)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ##### <a name="digitalocean-user-data"></a>User Data
 
 The User Data setting allows for the Droplet to use ambiguous user data upon its creation.  This is usually used for [CloudInit](https://help.ubuntu.com/community/CloudInit), in which special scripts can be run upon the initial creation of the server - such as configuration settings.
 
 Read More: [What is User Data?](https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ##### <a name="digitalocean-ipv6"></a>IPv6
 
@@ -175,6 +212,8 @@ Whether or not your website supports IPv6 is totally up to you, you framework, o
 
 Read More: [Setting up IPv6](https://www.digitalocean.com/community/tutorials/how-to-configure-your-droplet-to-only-use-ipv6-networking)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 ##### <a name="digitalocean-backups-snapshots"></a>Backups & Snapshots
 
 > DigitalOcean users have the option of backup and snapshot features. The main difference between the two is that snapshots can be generated manually and can be enabled at any time, while backups are run automatically every few days, depending on the droplet’s disk size, and must be enabled during the droplet's creation.
@@ -183,11 +222,15 @@ If you want to keep your server and data backed up, you can choose to enable bac
 
 Read More: [What are Backups?  What are Snapshots?](https://www.digitalocean.com/community/tutorials/digitalocean-backups-and-snapshots-explained)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 #### <a name="digitalocean-image"></a>Choosing an Image
 
 For this guide, we will be using the **Ubuntu 14.04 x64** Distribution for the image.  However, DigitalOcean has many different options for server distributions, one-click application installs, and more.
 
 Read More: [One-click App Installs, Distributions, and More](https://www.digitalocean.com/features/one-click-apps/)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="digitalocean-select-ssh-key"></a>Select SSH Key
 
@@ -195,6 +238,7 @@ Click the SSH key that we added earlier, that's it!
 
 For reference: [Adding the Key to Your DigitalOcean Droplet](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets)
 
+<small>[&#65514; Back to Top](#top)</small>
 
 #### <a name="digitalocean-launch"></a>Launching the Server
 
@@ -211,6 +255,8 @@ Pointing your domain to your Droplet varies depending on whom you purchased your
 
 Read More: [How to point your domain to DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 
+<small>[&#65514; Back to Top](#top)</small>
+
 --
 
 # Server Setup Part 2: Installing Tools & Adjusting Settings
@@ -226,9 +272,10 @@ Some common examples include:
 - Moving files: `mv file_you_want_to_move.txt /destination/and_new_file_name_if_wanted.txt`
 - Rebooting your server: `sudo reboot`
 
-
 Read More: [Connecting to your Droplet via SSH](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh)
 [Setting up Users](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="installing-dokku-alt"></a>Installing dokku-alt
 
@@ -247,12 +294,15 @@ Installing dokku-alt is easy and fully automated.  It can be done as follows:
 
 Read More: [dokku-alt](https://github.com/dokku-alt/dokku-alt/)
 
+<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="setting-up-virtual-memory"></a>Setting up Virtual Memory
 
 You may come to find that you run out of memory quickly, depending on how many visitors visit your website or what services your server will be running.  In fact, DigitalOcean's smallest memory tier (512MB at the time of this writing) can quickly fill up just running the server, let alone deploying code via git and more.
 
 To fix the "Out of Memory" errors, we can create virtual memory on your server's SSD.  This allocates a certain amount of space of your server's SSD to be used as a virtual "RAM".  However, writing data to the SSD this way can be "costly" in terms of how long it takes to do.
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ### <a name="bring-in-the-swap"></a>Bring in the SWAP
 
@@ -261,6 +311,7 @@ We'll be looking at the following guide for setting up a SWAP - virtual memory t
 Read More: [SWAP](https://www.digitalocean.com/community/tutorials/how-to-configure-virtual-memory-swap-file-on-a-vps)
 [Ubuntu 14.04 SWAP](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 
+<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="using-dam"></a>Using dokku-alt-manager (dam) to create your apps and databases
 
@@ -275,9 +326,13 @@ To install dokku-alt-manager:
 
 --
 
+<small>[&#65514; Back to Top](#top)</small>
+
 # <a name="deploying-code"></a>Deploying Code
 
 **NOTE: In order to deploy code, you must have set up an app in the previous step.**
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="initial-git-setup"></a>Initial git setup & first deploy
 
@@ -293,6 +348,8 @@ $ git push dokku master
 ```
 
 Your app should now be online! (yourapp.yourdomain.com)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="ch-ch-ch-ch-changes"></a>Making changes and pushing them to the interweb
 
@@ -310,6 +367,8 @@ Sometimes you may need to add a file that doesn't already exist in the git repos
 - `git add -A` adds all modified files as well as untracked, unadded files.
 - `git add app/controllers/yourfile.rb` adds a specific file or files (separated by a space).
 
+<small>[&#65514; Back to Top](#top)</small>
+
 # <a name="the-end"></a>Conclusion
 
 Now you should have all you need to get your app online.  What's next?
@@ -319,3 +378,6 @@ Now you should have all you need to get your app online.  What's next?
 - Try setting up a Droplet from a snapshot or backup that you've previously created
 - Try creating a database replication Droplet and connect to it via the private network
 - Create an install script to be used with CloudInit and user data to automate the server initialization configuration
+
+<small>[&#65514; Back to Top](#top)</small>
+
