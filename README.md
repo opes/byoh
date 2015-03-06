@@ -9,6 +9,8 @@ _A Getting Started Guide for Complete Noobs... like me_
 This guide is [open source](https://github.com/opes/byoh)!
 Feedback and contributions are welcome (and highly encouraged)!
 
+_Interested in setting up [Paz](https://github.com/yldio/paz)?  Stay tuned for updates!_
+
 --
 
 
