@@ -6,7 +6,10 @@ BYOH
 </p>
 
 ### BYOH: Build Your Own Heroku
+
 _A Getting Started Guide for Complete Noobs... like me_
+
+<sup>Last Updated: July 27, 2017</sup>
 
 This guide is [open source](https://github.com/opes/byoh)!
 Feedback and contributions are welcome (and highly encouraged)!
