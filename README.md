@@ -1,7 +1,9 @@
 BYOH
 ====
 
-![BYOH logo](logo.png)
+<p align="center">
+<img src="logo.png" />
+</p>
 
 ### BYOH: Build Your Own Heroku
 _A Getting Started Guide for Complete Noobs... like me_
