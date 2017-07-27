@@ -9,8 +9,6 @@ _A Getting Started Guide for Complete Noobs... like me_
 This guide is [open source](https://github.com/opes/byoh)!
 Feedback and contributions are welcome (and highly encouraged)!
 
-_Interested in setting up [Paz](https://github.com/yldio/paz)?  Stay tuned for updates!_
-
 --
 
 
@@ -45,10 +43,9 @@ _Interested in setting up [Paz](https://github.com/yldio/paz)?  Stay tuned for u
 			- [Add your domain](#dns-add-your-domain)
 - Server Setup Part 2: Installing Tools & Adjusting Settings
 	- [Connecting via SSH](#connect-via-ssh)
-	- [Installing Dokku-alt](#installing-dokku-alt)
 	- [Setting up Virtual Memory](#setting-up-virtual-memory)
 		- [Bring in the SWAP](#bring-in-the-swap)
-	- [Using dokku-alt-manager (dam) to create your apps and databases](#using-dam)
+	- [Creating your apps and databases](#app-setup)
 - [Deploying Code](#deploying-code)
 	- [Initial git setup & first deploy](#initial-git-setup)
 	- [Making changes and pushing them to the interweb](#ch-ch-ch-ch-changes)
@@ -231,7 +228,7 @@ Read More: [What are Backups?  What are Snapshots?](https://www.digitalocean.com
 
 #### <a name="digitalocean-image"></a>Choosing an Image
 
-For this guide, we will be using the **Ubuntu 14.04 x64** Distribution for the image.  However, DigitalOcean has many different options for server distributions, one-click application installs, and more.
+For this guide, we will be using the [**Dokku 0.9.4 on 16.04**](https://cloud.digitalocean.com/droplets/new?size=512mb&region=sfo1&appId=24976861&type=applications) One-click app droplet preset.  However, DigitalOcean has many different options for server distributions, one-click application installs, and more.
 
 Read More: [One-click App Installs, Distributions, and More](https://www.digitalocean.com/features/one-click-apps/)
 
@@ -249,7 +246,7 @@ For reference: [Adding the Key to Your DigitalOcean Droplet](https://www.digital
 
 _This is where the magic happens._
 
-Click "Create Droplet".
+Click "Create Droplet". Then visit the IP address of your Droplet to complete the Dokku setup.
 
 ### Set DNS
 #### <a name="dns-add-your-domain"></a>Add your domain
@@ -278,26 +275,6 @@ Some common examples include:
 - Rebooting your server: `sudo reboot`
 
 Read More: [Connecting to your Droplet via SSH](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh)
-[Setting up Users](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
-
-<small>[&#65514; Back to Top](#top)</small>
-
-## <a name="installing-dokku-alt"></a>Installing dokku-alt
-
-dokku-alt is a software package that allows for the ability to push your code to your server with Git and has many other features.  It's where the "Build Your Own Heroku" name comes from, as Dokku recreates some of the most popular features from Heroku, such as git deploys and buildpacks.
-
-dokku-alt adds additional features to dokku, such as the dokku-alt-manager, which we'll be using.
-
-Installing dokku-alt is easy and fully automated.  It can be done as follows:
-
-1. SSH into your server from your terminal: `ssh root@yourdomain`
-2. Run the following command: `sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/dokku-alt/dokku-alt/master/bootstrap.sh)"`
-3. After the installation has completed, visit `yourdomain:2000` to finish set up.
-	- Set the domain name where you website will be accessed
-	- Choose how you want users to access your apps on that domain (myapp.yourdomain.com or yourdomain.com/myapp)
-4. Save, then close out of your SSH session.
-
-Read More: [dokku-alt](https://github.com/dokku-alt/dokku-alt/)
 
 <small>[&#65514; Back to Top](#top)</small>
 
@@ -318,37 +295,32 @@ Read More: [SWAP](https://www.digitalocean.com/community/tutorials/how-to-config
 
 <small>[&#65514; Back to Top](#top)</small>
 
-## <a name="using-dam"></a>Using dokku-alt-manager (dam) to create your apps and databases
+## <a name="app-setup"></a>Creating your database
 
-In order to deploy apps and databases, we can either create them via command line or use the dokku-alt-manager interface that handles it for us.
+In order to deploy apps with databases, we need to create the DB first via command line.
 
-To install dokku-alt-manager:
+To create a Postgres database:
 
 1. SSH into your server: `ssh root@yourdomain`
-2. Run the install command: `dokku manager:install`
-3. Visit `http://dam.yourdomain.com` or `http://yourdomain.com/dam` (depending on how you chose to do the routing when installing dokku-alt)
-4. Your host (Droplet) should be listed, which you can select and deploy an app to or add a database.
+1. (For a Postgres database) Install the dokku-postgres plugin: `sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres`
+1. Create the database `dokku postgres:create app_name` (where `app_name` is the name of your application)
+
+<small>[&#65514; Back to Top](#top)</small>
 
 --
 
-<small>[&#65514; Back to Top](#top)</small>
-
 # <a name="deploying-code"></a>Deploying Code
-
-**NOTE: In order to deploy code, you must have set up an app in the previous step.**
-
-<small>[&#65514; Back to Top](#top)</small>
 
 ## <a name="initial-git-setup"></a>Initial git setup & first deploy
 
-Now that your app has been set up and everything you need has been installed, we can deploy our app to the server!  Remember, this is a Heroku clone, so Heroku requirements and necessary here, such as a valid [Procfile](https://devcenter.heroku.com/articles/procfile) and [Buildpack](https://devcenter.heroku.com/articles/buildpacks).
+Now that your database has been set up and everything you need has been installed, we can deploy our app to the server!  Remember, this is a Heroku clone, so Heroku requirements and necessary here, such as a valid [Procfile](https://devcenter.heroku.com/articles/procfile) and [Buildpack](https://devcenter.heroku.com/articles/buildpacks).
 
 For this example, we'll use the Node.js Heroku sample app.
 
 ```
 $ git clone https://github.com/heroku/node-js-sample
 $ cd node-js-sample
-$ git remote add dokku dokku@yourdomain.com:your-app-name
+$ git remote add dokku dokku@yourdomain.com:app_name
 $ git push dokku master
 ```
 
